@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- load MUI -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="food.js"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">Food Randomiser</a>
+        </div>
+    </nav>
+    <!-- example content -->
+    <div class="mui-container center-align" style="padding-top: 3rem;">
+        <button class="waves-effect waves-light btn-large" onclick="random(brunch)">Brunch</button>
+        <br>
+        <br>
+        <button class="waves-effect waves-light btn-large" onclick="random(western)">Western</button>
+        <br>
+        <br>
+        <button class="waves-effect waves-light btn-large" onclick="random(fastfood)">Fast Food</button>
+        <br>
+        <br>
+        <button class="waves-effect waves-light btn-large" onclick="random(japanese)">Japanese</button>
+        <br>
+        <br>
+        <button class="waves-effect waves-light btn-large" onclick="random(korean)">Korean</button>
+        <br>
+        <br>
+        <button class="waves-effect waves-light btn-large" onclick="random(chinese)">Chinese</button>
+        <br>
+        <br>
+    </div>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>You've Got</h4>
+            <p id="result"></p>
+        </div>
+        <div class="modal-footer">
+            <button href="#" class="modal-close waves-effect waves-green btn-flat">OK</button>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('.modal').modal();
+        });
+        function random(arr) {
+            var rand = arr[Math.floor(Math.random() * arr.length)];
+            $('#result').html(rand);
+            $('.modal').modal('open');
+        }
+    </script>
+</body>
+
+</html>
